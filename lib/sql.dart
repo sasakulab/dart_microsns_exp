@@ -8,7 +8,7 @@ var user = "f5fed5cc-1fdc-40bf-a258-0b933459e637";
 
 class NoteViewModel {
   static Future<void> createTables(sql.Database database) async {
-    await database.execute("""CREATE TABLE note(
+    await database.execute("""CREATE TABLE items(
       id INTEGER PRIMARY KEY,
       pubid TEXT,
       time TEXT,
@@ -21,7 +21,7 @@ class NoteViewModel {
 
   static Future<sql.Database> db() async {
     return sql.openDatabase(
-      'note.db',
+      'items.db',
       version: 1,
       onCreate: (sql.Database database, int version) async {
         await createTables(database);
@@ -33,8 +33,8 @@ class NoteViewModel {
     final db = await NoteViewModel.db();
     // UUID Key Generator
     final pubid = uuid.v4();
-    final flag = 0;
-    final now = DateTime.now();
+    int flag = 0;
+    final now = DateTime.now().toString();
     final data = {
       'pubid': pubid,
       'time': now,
@@ -59,13 +59,13 @@ class NoteViewModel {
   }
 
   static Future<int> updateItem(
-      int id, String title, String? descrption) async {
+      int id, String subject, String? descrption) async {
     final db = await NoteViewModel.db();
 
     final data = {
-      'title': title,
+      'subject': subject,
       'description': descrption,
-      'createdAt': DateTime.now().toString()
+      'time': DateTime.now().toString()
     };
 
     final result =
@@ -79,6 +79,14 @@ class NoteViewModel {
       await db.delete("items", where: "id = ?", whereArgs: [id]);
     } catch (err) {
       debugPrint("Something went wrong when deleting an item: $err");
+    }
+  }
+
+  static Future<void> dumpToJson() async {
+    try {
+      debugPrint("[DUMP]: Start to dump items to JSON Files.");
+    } catch (err) {
+      debugPrint("Something went wrong when dumping items: $err");
     }
   }
 }

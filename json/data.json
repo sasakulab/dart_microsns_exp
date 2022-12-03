@@ -8,7 +8,7 @@
     },
     "contents": [
         {
-            "id": "246b3c1e-71f7-4e5e-b8ea-7fc8c0835c48",
+            "pubid": "246b3c1e-71f7-4e5e-b8ea-7fc8c0835c48",
             "time": "20221124T003038+0900",
             "subject": "Subject of the Article",
             "flag": 0,
@@ -16,7 +16,7 @@
             "description": "Lorem ipsum unchara kanchara"
         },
         {
-            "id": "4077d6f8-c75b-4ab7-a37d-df76e4ab0e74",
+            "pubid": "4077d6f8-c75b-4ab7-a37d-df76e4ab0e74",
             "time": "20221124T002538+0900",
             "subject": "Subject of the Article 2",
             "flag": 0,

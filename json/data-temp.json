@@ -1,0 +1,17 @@
+{
+    "metadata": {
+        "commitlogs" : [
+            "8a411e3d-19f5-485a-a43a-d5c43cf55785"
+        ],
+        "lastupload": "f5fed5cc-1fdc-40bf-a258-0b933459e637-20221124T003038+0900"
+    },
+    "contents": [
+        {
+            "id": "246b3c1e-71f7-4e5e-b8ea-7fc8c0835c48",
+            "time": "20221124T003038+0900",
+            "subject": "Subject of the Article",
+            "flag": 0,
+            "description": "Lorem ipsum unchara kanchara"
+        }
+    ]
+}
